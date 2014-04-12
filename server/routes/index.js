@@ -21,18 +21,18 @@ module.exports = function(server) {
       }
     },
     { method: 'GET', path: '/partials/{file*}',
-      handler: {
-        directory: { path: './app/partials/', listing: false, index: false }
+      handler: function(req, res) {
+        res.view("partials/" + req.params.file);
       }
     },
     { method: 'GET', path: '/templates/{file*}',
-      handler: {
-        directory: { path: './app/templates/', listing: false, index: false }
+      handler: function(req, res) {
+        res.view("templates/" + req.params.file);
       }
     },
     { method: 'GET', path: '/',
       handler: function(req, rep) {
-        rep.view("index.html");
+        rep.view("index");
       }
     }
   ]);

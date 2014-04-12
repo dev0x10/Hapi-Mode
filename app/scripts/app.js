@@ -1,1 +1,1 @@
-angular.module('hapi-mode', ['mean.controllers.login','mean-factory-interceptor']);
+angular.module('hapi-mode', ['ngRoute','mm.foundation']);
