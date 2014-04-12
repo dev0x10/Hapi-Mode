@@ -5,9 +5,34 @@
 
 module.exports = function(server) {
   server.route([
-    { method: 'GET', path: '/{path*}',
+    { method: 'GET', path: '/scripts/{file*}',
       handler: {
-        directory: { path: './app', listing: false, index: true }
+        directory: { path: './app/scripts/', listing: false, index: false }
+      }
+    },
+    { method: 'GET', path: '/img/{file*}',
+      handler: {
+        directory: { path: './app/img/', listing: false, index: false }
+      }
+    },
+    { method: 'GET', path: '/css/{file*}',
+      handler: {
+        directory: { path: './app/css/', listing: false, index: false }
+      }
+    },
+    { method: 'GET', path: '/partials/{file*}',
+      handler: {
+        directory: { path: './app/partials/', listing: false, index: false }
+      }
+    },
+    { method: 'GET', path: '/templates/{file*}',
+      handler: {
+        directory: { path: './app/templates/', listing: false, index: false }
+      }
+    },
+    { method: 'GET', path: '/',
+      handler: function(req, rep) {
+        rep.view("index.html");
       }
     }
   ]);

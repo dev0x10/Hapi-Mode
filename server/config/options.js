@@ -5,7 +5,7 @@
 
 module.exports = {
   views: {
-    path: rootPath + "/app/views/",
+    path: rootPath + "/app/views",
     engines: { html: 'swig' },
     isCached: false
   }

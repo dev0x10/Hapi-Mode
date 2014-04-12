@@ -4,28 +4,13 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Foundation | Welcome</title>
-    <link rel="stylesheet" href="css/foundation.css" />
-    <script src="scripts/libs/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="../css/foundation.css" />
+    <script src="../scripts/libs/modernizr/modernizr.js"></script>
   </head>
   <body>
+
   <!-- Nav Bar -->
-
-  <div class="row">
-      <div class="large-12 columns">
-          <div class="nav-bar right">
-              <ul class="button-group">
-                  <li><a href="#" class="button">Link 1</a></li>
-                  <li><a href="#" class="button">Link 2</a></li>
-                  <li><a href="#" class="button">Link 3</a></li>
-                  <li><a href="#" class="button">Link 4</a></li>
-              </ul>
-          </div>
-          <h1>Blog <small>This is my blog. It's awesome.</small></h1>
-          <hr />
-      </div>
-  </div>
-
-  <!-- End Nav -->
+  {% include 'templates/header.html' %}
 
 
   <!-- Main Page Content and Sidebar -->
@@ -37,7 +22,7 @@
 
           <article>
 
-              <h3><a href="#">Blog Post Title</a></h3>
+              <h3><a href="#">Blog </a></h3>
               <h6>Written by <a href="#">John Smith</a> on August 12, 2012.</h6>
 
               <div class="row">
@@ -107,32 +92,13 @@
 
       <!-- End Sidebar -->
   </div>
-
   <!-- End Main Content and Sidebar -->
 
-
   <!-- Footer -->
+  {% include 'templates/footer.html' %}
 
-  <footer class="row">
-      <div class="large-12 columns">
-          <hr />
-          <div class="row">
-              <div class="large-6 columns">
-                  <p>&copy; Copyright no one at all. Go to town.</p>
-              </div>
-              <div class="large-6 columns">
-                  <ul class="inline-list right">
-                      <li><a href="#">Link 1</a></li>
-                      <li><a href="#">Link 2</a></li>
-                      <li><a href="#">Link 3</a></li>
-                      <li><a href="#">Link 4</a></li>
-                  </ul>
-              </div>
-          </div>
-      </div>
-  </footer>
-  <script src="scripts/libs/jquery/dist/jquery.js"></script>
-  <script src="scripts/libs/foundation/js/foundation.js"></script>
+  <script src="../scripts/libs/jquery/dist/jquery.js"></script>
+  <script src="../scripts/libs/foundation/js/foundation.js"></script>
   <script>
       $(document).foundation();
 
