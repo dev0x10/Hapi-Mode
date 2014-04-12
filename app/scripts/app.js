@@ -1,0 +1,1 @@
+angular.module('hapi-mode', ['mean.controllers.login','mean-factory-interceptor']);
