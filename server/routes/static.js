@@ -31,8 +31,13 @@ module.exports = function(server) {
       }
     },
     { method: 'GET', path: '/',
-      handler: function(req, rep) {
-        rep.view("index");
+      handler: function(req, res) {
+        res.view("index");
+      }
+    },
+    { method: 'GET', path: '/{file*}',
+      handler: function(req, res) {
+        res.view("index");
       }
     }
   ]);
