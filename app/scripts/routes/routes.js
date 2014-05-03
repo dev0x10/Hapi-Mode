@@ -6,6 +6,7 @@
 angular.module('hapi-mode').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider
     .when('/', { templateUrl: '/partials/main', controller: 'MainCtrl' })
+    .when('/', { templateUrl: '/partials/signup', controller: 'SignupCtrl' })
     .otherwise({ redirectTo: '/' });
   $locationProvider.html5Mode(true);
 }]);
