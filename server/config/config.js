@@ -7,5 +7,9 @@ module.exports = {
   server: {
     port: 3000,
     host: "localhost"
+  },
+  mongodb: {
+    db: "hapimode",
+    host: "localhost"
   }
 }
