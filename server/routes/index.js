@@ -5,4 +5,5 @@
 
 module.exports = function(server) {
   require("./static")(server);
+  require("./user")(server);
 };
