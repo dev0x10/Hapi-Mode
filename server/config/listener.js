@@ -17,6 +17,7 @@ module.exports = function(server) {
     }
     else if(tags.error) {
       console.log("Request error");
+      console.log(event.data.data.details[0]);
     }
   });
 

@@ -9,7 +9,8 @@ var Joi = require("joi");
 var userSchema = {
   name: Joi.string().required(),
   password: Joi.string().required(),
-  email: Joi.string().required()
+  email: Joi.string().email().required(),
+  cpassword: Joi.string()
 };
 
 module.exports = function (server) {
