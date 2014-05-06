@@ -11,6 +11,12 @@ angular.module('hapi-mode')
           .then(function (result) {
             return result;
           });
+      },
+      login: function(userData) {
+        return $http.post("/user/login", userData)
+          .then(function (result) {
+            return result;
+          });
       }
     }
   });

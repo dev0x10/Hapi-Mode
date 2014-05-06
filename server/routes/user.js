@@ -21,6 +21,13 @@ module.exports = function (server) {
         handler: userController.signUp,
         validate: { payload: userSchema }
       }
+    },
+    { method: 'POST',
+      path: '/user/login',
+      config: {
+        handler: userController.login,
+        validate: { payload: { email: Joi.string().email().required(), password: Joi.string().required()} }
+      }
     }
   ]);
 };
