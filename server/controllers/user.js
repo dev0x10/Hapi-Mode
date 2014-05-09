@@ -17,9 +17,10 @@ var userController = {
   },
   login: function (req, rep) {
     req.payload.password = require("../utils/generator").password(req.payload.password);
-    userSchema.findOne(req.payload, function(err, data) {
-      if(data) {
-        rep().code(200);
+    userSchema.findOne(req.payload, function(err, user) {
+      if(user) {
+        req.auth.session.set(user);
+        rep(user).code(200);
       }
       else {
         rep().code(401);

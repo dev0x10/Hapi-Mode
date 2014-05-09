@@ -9,7 +9,6 @@ angular.module('hapi-mode')
     $scope.login = function() {
       UserService.login($scope.user)
         .then(function(data) {
-          console.log(data);
           $location.path("/dashboard");
         })
         .catch(function(err) {

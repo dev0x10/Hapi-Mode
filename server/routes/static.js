@@ -35,6 +35,9 @@ module.exports = function(server) {
         res.view("index");
       }
     },
+    { method: 'GET', path: '/dashboard',
+      config: {handler: function(req,rep) { rep.view('index'); }, auth: true}
+    },
     { method: 'GET', path: '/{file*}',
       handler: function(req, res) {
         res.view("index");
