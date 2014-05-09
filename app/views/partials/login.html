@@ -1,20 +1,20 @@
 <div class="row">
     <div class="large-6 small-12 large-centered columns text-center">
         <h5>Login Form</h5>
-        <form onsubmit="login()">
+        <form ng-submit="login()">
             <div class="row">
                 <div class="large-12">
-                    <input type="email" id="email" placeholder="Email" required />
+                    <input type="email" ng-model="user.email" id="email" placeholder="Email" required />
                 </div>
             </div>
             <div class="row">
                 <div class="large-12">
-                    <input type="password" id="password" placeholder="Password" required />
+                    <input type="password" ng-model="user.password" id="password" placeholder="Password" required />
                 </div>
             </div>
             <div class="row">
                 <div class="large-12">
-                    <button type="button" class="button">Login</button>
+                    <button type="submit" class="button">Login</button>
                 </div>
             </div>
         </form>
