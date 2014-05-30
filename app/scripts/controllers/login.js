@@ -6,13 +6,20 @@
 angular.module('hapi-mode')
   .controller('LoginCtrl', function ($scope, UserService, $location) {
     $scope.user = {};
-    $scope.login = function() {
+    $scope.alert = {
+      fail: false
+    };
+    $scope.login = function () {
       UserService.login($scope.user)
-        .then(function(data) {
+        .then(function (data) {
           $location.path("/dashboard");
         })
-        .catch(function(err) {
-          console.log("ERROR");
+        .catch(function (err) {
+          $scope.alert.fail = true;
+          $scope.user = {};
         });
-    }
+    };
+    $scope.dismiss = function () {
+      $scope.alert.fail = false;
+    };
   });
