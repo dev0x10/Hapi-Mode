@@ -5,6 +5,8 @@
 
 module.exports = function(server) {
 
+  var log = require("./config").log;
+
   server.on('log', function (event, tags) {
     if (tags.error) {
       console.log('Server error: ' + (event.data || 'unspecified'));
@@ -12,16 +14,20 @@ module.exports = function(server) {
   });
 
   server.on('request', function (request, event, tags) {
-    if (tags.received) {
-      console.log('New request: ' + event.data.method + " " + event.data.url);
-    }
-    else if(tags.error) {
-      console.log("Request error");
+    if(log.request) {
+      if (tags.received) {
+        console.log('New request: ' + event.data.method + " " + event.data.url);
+      }
+      else if(tags.error) {
+        console.log("Request error");
+      }
     }
   });
 
   server.on('response', function (request) {
-    console.log('Response sent for request: ' + request.id);
+    if(log.response) {
+      console.log('Response sent for request: ' + request.id);
+    }
   });
 
   server.on('internalError', function (request, err) {
