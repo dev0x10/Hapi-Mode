@@ -4,9 +4,5 @@
 "use strict";
 
 Application.Controllers.controller('MainCtrl', function ($scope) {
-    $scope.awesomeThings = [
-      'HTML5 Boilerplate',
-      'AngularJS',
-      'Karma'
-    ];
+    $scope.title = " “Any fool can write code that a computer can understand. Good programmers write code that humans can understand.” - Martin Fowler";
   });
