@@ -3,12 +3,11 @@
  */
 "use strict";
 
-angular.module('hapi-mode')
-  .controller('SignupCtrl', function ($scope, UserService) {
+Application.Controllers.controller('SignupCtrl', function ($scope, SignupService) {
     $scope.user = {};
     $scope.alert = {success: false, fail: false};
     $scope.signup = function () {
-      UserService.signup($scope.user)
+      SignupService.signup($scope.user)
         .then(function (data) {
           if(data.status === 201) {
             $scope.alert.success = true;

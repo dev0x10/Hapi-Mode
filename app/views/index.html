@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Hapi Mode</title>
-    <link rel="stylesheet" href="/css/foundation.css" />
-    <script src="/scripts/libs/modernizr/modernizr.js"></script>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="libs/modernizr/modernizr.js"></script>
   </head>
   <body data-ng-app="hapi-mode">
 
@@ -16,16 +16,17 @@
 
   <!-- Footer -->
   {% include 'footer.html' %}
-  <script src="/scripts/libs/angular/angular.js"></script>
-  <script src="/scripts/libs/angular-route/angular-route.js"></script>
-  <script src="/scripts/libs/angular-zurb/angular-zurb.js"></script>
-  <script src="/scripts/app.js"></script>
-  <script src="/scripts/routes/routes.js"></script>
-  <script src="/scripts/services/user.js"></script>
-  <script src="/scripts/controllers/main.js"></script>
-  <script src="/scripts/controllers/signup.js"></script>
-  <script src="/scripts/controllers/login.js"></script>
-  <script src="/scripts/controllers/dashboard.js"></script>
+  <script src="libs/angular/angular.js"></script>
+  <script src="libs/angular-route/angular-route.js"></script>
+  <script src="libs/angular-zurb/angular-zurb.js"></script>
+  <script src="app.js"></script>
+  <script src="main/main-module.js"></script>
+  <script src="signup/signup-module.js"></script>
+  <script src="signup/signup-service.js"></script>
+  <script src="login/login-module.js"></script>
+  <script src="login/login-service.js"></script>
+  <script src="dashboard/dashboard-module.js"></script>
+  <script src="routes.js"></script>
   <script>
       var doc = document.documentElement;
       doc.setAttribute('data-useragent', navigator.userAgent);

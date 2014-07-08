@@ -3,8 +3,7 @@
  */
 "use strict";
 
-angular.module('hapi-mode')
-  .controller('MainCtrl', function ($scope) {
+Application.Controllers.controller('MainCtrl', function ($scope) {
     $scope.awesomeThings = [
       'HTML5 Boilerplate',
       'AngularJS',

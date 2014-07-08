@@ -5,31 +5,6 @@
 
 module.exports = function(server) {
   server.route([
-    { method: 'GET', path: '/scripts/{file*}',
-      handler: {
-        directory: { path: './app/scripts/', listing: false, index: false }
-      }
-    },
-    { method: 'GET', path: '/img/{file*}',
-      handler: {
-        directory: { path: './app/img/', listing: false, index: false }
-      }
-    },
-    { method: 'GET', path: '/css/{file*}',
-      handler: {
-        directory: { path: './app/css/', listing: false, index: false }
-      }
-    },
-    { method: 'GET', path: '/partials/{file*}',
-      handler: function(req, res) {
-        res.view("partials/" + req.params.file);
-      }
-    },
-    { method: 'GET', path: '/templates/{file*}',
-      handler: function(req, res) {
-        res.view("templates/" + req.params.file);
-      }
-    },
     { method: 'GET', path: '/',
       handler: function(req, res) {
         res.view("index");
@@ -38,9 +13,14 @@ module.exports = function(server) {
     { method: 'GET', path: '/dashboard',
       config: {handler: function(req,rep) { rep.view('index'); }, auth: true}
     },
-    { method: 'GET', path: '/{file*}',
-      handler: function(req, res) {
-        res.view("index");
+    { method: 'GET', path: '/{p*}',
+      handler: {
+        directory: { path: './app', listing: false, index: true }
+      }
+    },
+    { method: 'GET', path: '/{p}',
+      handler: {
+        directory: { path: './app', listing: false, index: true }
       }
     }
   ]);

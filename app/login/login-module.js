@@ -3,14 +3,14 @@
  */
 "use strict";
 
-angular.module('hapi-mode')
-  .controller('LoginCtrl', function ($scope, UserService, $location) {
+Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, $location) {
     $scope.user = {};
     $scope.alert = {
       fail: false
     };
     $scope.login = function () {
-      UserService.login($scope.user)
+      console.log("HAHAHA");
+      LoginService.login($scope.user)
         .then(function (data) {
           $location.path("/dashboard");
         })

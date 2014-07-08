@@ -15,6 +15,6 @@ module.exports = {
   secret: "thisiskeyforencryption" ,
   log: {
     response: false,
-    request: false
+    request: true
   }
 };
