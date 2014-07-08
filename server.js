@@ -11,7 +11,9 @@ var server = Hapi.createServer(config.server.host, config.server.port, options);
 mongoose.connect("mongodb://" + config.mongodb.host + "/" + config.mongodb.db);
 
 
-server.pack.require(["hapi-auth-cookie"], function (err) {
+server.pack.register({
+    plugin: require("hapi-auth-cookie")
+  }, function (err) {
 
   err ? console.log(err) : "";
 
@@ -35,7 +37,8 @@ server.pack.require(["hapi-auth-cookie"], function (err) {
     });
 
     mongoose.connection.on("error", function () {
-      console.error("Cannot connect to mongodb");
+      throw new Error("Cannot connect to mongodb");
+      server.stop();
     });
   });
 

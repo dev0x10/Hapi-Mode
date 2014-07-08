@@ -11,14 +11,9 @@ module.exports = function(server) {
       }
     },
     { method: 'GET', path: '/dashboard',
-      config: {handler: function(req,rep) { rep.view('index'); }, auth: true}
+      config: {handler: function(req,rep) { rep.view('index'); }, auth: "session"}
     },
-    { method: 'GET', path: '/{p*}',
-      handler: {
-        directory: { path: './app', listing: false, index: true }
-      }
-    },
-    { method: 'GET', path: '/{p}',
+    { method: 'GET', path: '/{file*}',
       handler: {
         directory: { path: './app', listing: false, index: true }
       }

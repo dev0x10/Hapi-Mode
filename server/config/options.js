@@ -3,10 +3,13 @@
  */
 "use strict";
 
+var swig = require("swig");
+swig.setDefaults({ cache: false });
+
 module.exports = {
   views: {
     path: rootPath + "/app/views",
-    engines: { html: 'swig' },
+    engines: { html: swig },
     isCached: false,
     allowAbsolutePaths : true
   }
