@@ -1,7 +1,7 @@
 /**
  * Created by yauriedogawa on 4/13/14.
  */
-"use strict";
+'use strict';
 
 Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, $location) {
     $scope.user = {};
@@ -9,10 +9,9 @@ Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, 
       fail: false
     };
     $scope.login = function () {
-      console.log("HAHAHA");
       LoginService.login($scope.user)
         .then(function (data) {
-          $location.path("/dashboard");
+          $location.path('/dashboard');
         })
         .catch(function (err) {
           $scope.alert.fail = true;

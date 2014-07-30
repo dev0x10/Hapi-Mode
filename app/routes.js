@@ -1,7 +1,7 @@
 /**
  * Created by yauriedogawa on 4/13/14.
  */
-"use strict";
+'use strict';
 
 angular.module('hapi-mode').config(['$routeProvider', '$locationProvider', function ($routeProvider, $locationProvider) {
   $routeProvider

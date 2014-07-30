@@ -33,7 +33,6 @@ server.pack.register({
     console.log('Server started at: ' + server.info.uri);
 
     mongoose.connection.on("open", function () {
-      console.log("Mongodb connected successfully")
     });
 
     mongoose.connection.on("error", function () {
