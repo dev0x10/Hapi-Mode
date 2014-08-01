@@ -20,6 +20,7 @@ var userController = {
     userSchema.findOne(req.payload, function(err, user) {
       if(user) {
         req.auth.session.set(user);
+        user.password = undefined;
         rep(user).code(200);
       }
       else {
