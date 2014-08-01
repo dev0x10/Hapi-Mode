@@ -10,6 +10,7 @@ Application.Directives = angular.module('hapi-mode.directives', []);
 
 angular.module('hapi-mode', [
   'ngRoute',
+  'ngCookies',
   'mm.foundation',
   'hapi-mode.constants',
   'hapi-mode.services',

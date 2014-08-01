@@ -3,14 +3,16 @@
  */
 'use strict';
 
-Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, $location) {
+Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, $location, $cookieStore) {
     $scope.user = {};
     $scope.alert = {
       fail: false
     };
     $scope.login = function () {
       LoginService.login($scope.user)
-        .then(function (data) {
+        .then(function (response) {
+          console.log(response.data);
+          $cookieStore.put('user',response.data);
           $location.path('/dashboard');
         })
         .catch(function (err) {
