@@ -3,7 +3,7 @@
  */
 'use strict';
 
-Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, $location, $cookieStore) {
+Application.Controllers.controller('LoginCtrl', function ($scope, $rootScope, LoginService, UserFactory, $location) {
     $scope.user = {};
     $scope.alert = {
       fail: false
@@ -11,8 +11,9 @@ Application.Controllers.controller('LoginCtrl', function ($scope, LoginService, 
     $scope.login = function () {
       LoginService.login($scope.user)
         .then(function (response) {
-          console.log(response.data);
-          $cookieStore.put('user',response.data);
+          UserFactory.setData(response.data);
+          UserFactory.setLogin(true);
+          $rootScope.$broadcast('UserLoggedIn');
           $location.path('/dashboard');
         })
         .catch(function (err) {

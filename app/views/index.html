@@ -12,45 +12,29 @@
   </head>
   <body data-ng-app="hapi-mode">
 
-  <!-- Nav Bar -->
-  <!-- Nav Bar -->
-
-<div class="row">
-    <div class="large-12 columns">
-        <div class="nav-bar right">
-            <ul class="button-group">
-                <li><a href="/main" class="button">Home</a></li>
-                <li><a href="/signup" class="button">Sign Up</a></li>
-                <li><a href="/login" class="button">Login</a></li>
-            </ul>
-        </div>
-        <h1>Hapi Mode<small> - Sample ToDo App</small></h1>
-        <hr />
-    </div>
-</div>
-
-<!-- End Nav -->
+  <div ng-include src="'components/header/header.html'"></div>
 
   <div class="row" data-ng-view></div>
 
-  <!-- Footer -->
   <footer class="row">
     <div class="large-12 columns">
         <hr />
         <p>&copy; Copyright no one at all. Go to town.</p>
     </div>
-</footer>
+  </footer>
   <script src="libs/angular/angular.js"></script>
   <script src="libs/angular-route/angular-route.js"></script>
   <script src="libs/angular-cookies/angular-cookies.js"></script>
   <script src="libs/angular-foundation/mm-foundation-tpls.js"></script>
   <script src="app.js"></script>
   <script src="components/main/main-controller.js"></script>
+  <script src="components/user/user-factory.js"></script>
   <script src="components/signup/signup-controller.js"></script>
   <script src="components/signup/signup-service.js"></script>
   <script src="components/login/login-controller.js"></script>
   <script src="components/login/login-service.js"></script>
   <script src="components/dashboard/dashboard-controller.js"></script>
+  <script src="components/header/header-controller.js"></script>
   <script src="routes.js"></script>
   <script>
       var doc = document.documentElement;

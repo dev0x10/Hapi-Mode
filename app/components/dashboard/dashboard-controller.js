@@ -3,7 +3,7 @@
  */
 'use strict';
 
-Application.Controllers.controller('DashboardCtrl', function ($scope, $cookieStore) {
-  console.log($cookieStore.get('user').name);
+Application.Controllers.controller('DashboardCtrl', function ($scope) {
+
 });
 
