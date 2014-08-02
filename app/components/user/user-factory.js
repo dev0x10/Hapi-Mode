@@ -10,14 +10,14 @@ Application.Factories.factory('UserFactory', function ($http, $cookieStore) {
     'email': '',
     'isLoggedIn': false,
     setData: function (userData) {
-      $cookieStore.put('hapimode-user',userData);
+      $cookieStore.put('hapimode-user', userData);
       this.name = userData.name;
       this.email = userData.email;
     },
     setLogin: function (isLoggedIn) {
       this.isLoggedIn = isLoggedIn;
     },
-    destroy: function(){
+    destroy: function () {
       $cookieStore.remove('hapimode-user');
       this.name = '';
       this.email = '';
@@ -30,7 +30,7 @@ Application.Factories.factory('UserFactory', function ($http, $cookieStore) {
           return result;
         });
     },
-    logout: function() {
+    logout: function () {
       return $http.post('/user/logout')
         .then(function (result) {
           return result;

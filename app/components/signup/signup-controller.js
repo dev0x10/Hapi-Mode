@@ -4,8 +4,10 @@
 'use strict';
 
 Application.Controllers.controller('SignupCtrl', function ($scope, UserFactory) {
+
   $scope.user = {};
   $scope.alert = {success: false, fail: false};
+
   $scope.signup = function () {
     UserFactory.signup($scope.user)
       .then(function (data) {

@@ -9,7 +9,7 @@ Application.Controllers.controller('HeaderCtrl', function ($scope, $location, $c
   $scope.isLoggedIn = false;
 
   //listener for broadcast from login-controller
-  $scope.$on('UserLoggedIn',function () {
+  $scope.$on('UserLoggedIn', function () {
     $scope.isLoggedIn = UserFactory.isLoggedIn;
   });
 

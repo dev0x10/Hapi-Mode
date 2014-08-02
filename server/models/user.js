@@ -4,7 +4,7 @@
 "use strict";
 
 var mongoose = require("mongoose"),
-    mongooseSchema = mongoose.Schema;
+  mongooseSchema = mongoose.Schema;
 
 var UserSchema = new mongooseSchema({
   name: {
@@ -24,7 +24,7 @@ var UserSchema = new mongooseSchema({
   }
 });
 
-UserSchema.pre('save', function(next) {
+UserSchema.pre('save', function (next) {
   this.password = require("../utils/generator").password(this.password);
   next();
 });

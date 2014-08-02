@@ -12,7 +12,7 @@ module.exports = {
     db: "hapimode",
     host: "localhost"
   },
-  secret: "thisiskeyforencryption" ,
+  secret: "thisiskeyforencryption",
   log: {
     response: false,
     request: true

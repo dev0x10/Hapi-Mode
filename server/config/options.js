@@ -11,6 +11,6 @@ module.exports = {
     path: rootPath + "/app/views",
     engines: { html: swig },
     isCached: false,
-    allowAbsolutePaths : true
+    allowAbsolutePaths: true
   }
 }

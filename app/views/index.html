@@ -1,42 +1,46 @@
 <!doctype html>
 <html class="no-js" lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Hapi Mode</title>
-    <link rel="stylesheet" href="assets/css/foundation.css" />
+    <link rel="stylesheet" href="assets/css/foundation.css"/>
     <style>
-        #hapimode { text-shadow: 0px 1px 1px #4d4d4d; color: #222; font: 45px 'LeagueGothicRegular'; }
+        #hapimode {
+            text-shadow: 0px 1px 1px #4d4d4d;
+            color: #222;
+            font: 45px 'LeagueGothicRegular';
+        }
     </style>
     <script src="libs/modernizr/modernizr.js"></script>
-  </head>
-  <body data-ng-app="hapi-mode">
+</head>
+<body data-ng-app="hapi-mode">
 
-  <div ng-include src="'components/header/header.html'"></div>
+<div ng-include src="'components/header/header.html'"></div>
 
-  <div class="row" data-ng-view></div>
+<div class="row" data-ng-view></div>
 
-  <footer class="row">
+<footer class="row">
     <div class="large-12 columns">
-        <hr />
+        <hr/>
         <p>&copy; Copyright no one at all. Go to town.</p>
     </div>
-  </footer>
-  <script src="libs/angular/angular.js"></script>
-  <script src="libs/angular-route/angular-route.js"></script>
-  <script src="libs/angular-cookies/angular-cookies.js"></script>
-  <script src="libs/angular-foundation/mm-foundation-tpls.js"></script>
-  <script src="app.js"></script>
-  <script src="components/main/main-controller.js"></script>
-  <script src="components/user/user-factory.js"></script>
-  <script src="components/signup/signup-controller.js"></script>
-  <script src="components/login/login-controller.js"></script>
-  <script src="components/dashboard/dashboard-controller.js"></script>
-  <script src="components/header/header-controller.js"></script>
-  <script src="routes.js"></script>
-  <script>
-      var doc = document.documentElement;
-      doc.setAttribute('data-useragent', navigator.userAgent);
-  </script>
-  </body>
+</footer>
+<script src="libs/angular/angular.js"></script>
+<script src="libs/angular-route/angular-route.js"></script>
+<script src="libs/angular-cookies/angular-cookies.js"></script>
+<script src="libs/angular-foundation/mm-foundation-tpls.js"></script>
+<script src="app.js"></script>
+<script src="components/main/main-controller.js"></script>
+<script src="components/user/user-factory.js"></script>
+<script src="components/signup/signup-controller.js"></script>
+<script src="components/login/login-controller.js"></script>
+<script src="components/dashboard/dashboard-controller.js"></script>
+<script src="components/header/header-controller.js"></script>
+<script src="routes.js"></script>
+<script>
+    var doc = document.documentElement;
+    doc.setAttribute('data-useragent', navigator.userAgent);
+</script>
+</body>
 </html>

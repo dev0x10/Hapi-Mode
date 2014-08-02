@@ -3,7 +3,7 @@
  */
 "use strict";
 
-module.exports = function(server) {
+module.exports = function (server) {
   require("./static")(server);
   require("./user")(server);
 };

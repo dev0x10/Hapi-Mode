@@ -3,7 +3,7 @@
  */
 "use strict";
 
-module.exports = function(server) {
+module.exports = function (server) {
 
   var log = require("./config").log;
 
@@ -14,18 +14,18 @@ module.exports = function(server) {
   });
 
   server.on('request', function (request, event, tags) {
-    if(log.request) {
+    if (log.request) {
       if (tags.received) {
         console.log('New request: ' + event.data.method + " " + event.data.url);
       }
-      else if(tags.error) {
+      else if (tags.error) {
         console.log("Request error");
       }
     }
   });
 
   server.on('response', function (request) {
-    if(log.response) {
+    if (log.response) {
       console.log('Response sent for request: ' + request.id);
     }
   });
