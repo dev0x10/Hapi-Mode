@@ -3,7 +3,7 @@
  */
 'use strict';
 
-Application.Services.factory('LoginService', function ($http) {
+Application.Factories.factory('LoginFactory', function ($http) {
   return {
     login: function (userData) {
       return $http.post('/user/login', userData)

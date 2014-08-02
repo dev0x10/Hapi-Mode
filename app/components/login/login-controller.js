@@ -3,13 +3,13 @@
  */
 'use strict';
 
-Application.Controllers.controller('LoginCtrl', function ($scope, $rootScope, LoginService, UserFactory, $location) {
+Application.Controllers.controller('LoginCtrl', function ($scope, $rootScope, LoginFactory, UserFactory, $location) {
     $scope.user = {};
     $scope.alert = {
       fail: false
     };
     $scope.login = function () {
-      LoginService.login($scope.user)
+      LoginFactory.login($scope.user)
         .then(function (response) {
           UserFactory.setData(response.data);
           UserFactory.setLogin(true);
