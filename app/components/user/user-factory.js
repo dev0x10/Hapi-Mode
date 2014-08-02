@@ -4,7 +4,7 @@
 
 'use strict';
 
-Application.Factories.factory('UserFactory', function ($cookieStore) {
+Application.Factories.factory('UserFactory', function ($http, $cookieStore) {
   var user = {
     'name': '',
     'email': '',
@@ -22,6 +22,25 @@ Application.Factories.factory('UserFactory', function ($cookieStore) {
       this.name = '';
       this.email = '';
       this.isLoggedIn = false;
+      var logoutResult = this.logout();
+    },
+    login: function (userData) {
+      return $http.post('/user/login', userData)
+        .then(function (result) {
+          return result;
+        });
+    },
+    logout: function() {
+      return $http.post('/user/logout')
+        .then(function (result) {
+          return result;
+        });
+    },
+    signup: function (userData) {
+      return $http.post('/user', userData)
+        .then(function (result) {
+          return result;
+        });
     }
   };
 

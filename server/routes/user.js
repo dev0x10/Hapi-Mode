@@ -28,6 +28,11 @@ module.exports = function (server) {
         handler: userController.login,
         validate: { payload: { email: Joi.string().email().required(), password: Joi.string().required()} }
       }
+    },
+    { method: 'POST',
+      path: '/user/logout',
+      config: {
+        handler: userController.logout}
     }
   ]);
 };

@@ -27,6 +27,10 @@ var userController = {
         rep().code(401);
       }
     })
+  },
+  logout: function(req, rep) {
+    req.auth.session.clear();
+    rep().code(200);
   }
 };
 
